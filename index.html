@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sailesh Kathir A</title>
+<meta name="description" content="Sailesh Kathir A — software engineer building fast, reliable web products from storefront to database.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE occasion: a premium fashion house's own site, hushed and exact
+   IDEA the portfolio behaves like a luxury label's storefront, black silk and fine rules
+   PICTURE a live concept store in a browser frame: filter, pick size, add to bag
+   COLOUR fixed night palette: onyx ground, bone ink, silver silk, one warm taupe in garments
+   TYPE Bodoni Moda display + Manrope text
+   LAYOUT title across the top, store full width beneath; phone stacks title, store, rest */
+:root{color-scheme:dark;--bg:#0a0a0a;--panel:#121212;--panel2:#181818;--ink:#eeebe5;--mute:#9a978f;--line:#2a2a2a;--bone:#ddd6ca;--taupe:#8b7d6b}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Manrope,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+img,svg{max-width:100%}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding-block:clamp(36px,6vw,88px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+h1,h2,h3{font-family:"Bodoni Moda",Georgia,serif;font-weight:400;letter-spacing:-.02em;line-height:1.05;text-wrap:balance;margin:0}
+h1{font-size:clamp(40px,6.4vw,76px)}
+h2{font-size:clamp(32px,4vw,48px)}
+h3{font-size:24px}
+p{margin:0}
+.mute{color:var(--mute)}
+.small{font-size:13px}
+nav.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px max(5vw,16px)}
+.mono{font-family:"Bodoni Moda",serif;font-size:22px;text-decoration:none}
+nav.top ul{display:flex;gap:clamp(12px,2.4vw,28px);list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav.top ul a{text-decoration:none;color:var(--mute);font-size:14px}
+nav.top ul a:hover,nav.top ul a:focus-visible{color:var(--ink)}
+.hero{position:relative;padding-bottom:28px}
+.hero .silk{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.55}
+.hero .wrap{position:relative;z-index:1}
+.intro{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:32px;align-items:end}
+.intro p.lede{font-size:17px;max-width:46ch;color:#cfcbc3}
+.role{font-size:15px;color:var(--mute);margin-bottom:18px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border:1px solid var(--ink);background:transparent;color:var(--ink);font:600 14px Manrope,sans-serif;text-decoration:none;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover,.btn:focus-visible{background:var(--ink);color:var(--bg)}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn.solid:hover,.btn.solid:focus-visible{background:transparent;color:var(--ink)}
+:focus-visible{outline:2px solid var(--bone);outline-offset:2px}
+.browser{margin-top:clamp(28px,4vw,48px);border:1px solid #333;background:var(--panel);box-shadow:0 30px 60px -30px #000;position:relative;overflow:hidden}
+.chrome{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);background:#0f0f0f}
+.dots{display:flex;gap:6px}.dots i{width:10px;height:10px;border-radius:50%;background:#2e2e2e;display:block}
+.url{flex:1;max-width:420px;margin:0 auto;font-size:13px;color:var(--mute);background:#181818;border:1px solid var(--line);padding:4px 12px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.store-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px clamp(14px,3vw,28px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{font-family:"Bodoni Moda",serif;font-size:22px;letter-spacing:.32em}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{min-height:36px;padding:0 14px;border:1px solid var(--line);background:transparent;color:var(--mute);font:500 13px Manrope,sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{border-color:var(--ink);color:var(--ink)}
+.bagbtn{min-height:40px;padding:0 14px;border:1px solid var(--line);background:transparent;color:var(--ink);font:600 13px Manrope,sans-serif;cursor:pointer;display:flex;gap:8px;align-items:center}
+.bagbtn b{display:inline-grid;place-items:center;min-width:22px;height:22px;border-radius:11px;background:var(--ink);color:var(--bg);font-size:12px}
+.bagbtn.bump b{animation:bump .4s}
+@keyframes bump{50%{transform:scale(1.35)}}
+.banner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-bottom:1px solid var(--line);min-height:200px}
+.banner .copy{padding:clamp(18px,3vw,36px);display:flex;flex-direction:column;justify-content:center;gap:10px}
+.banner .copy h3{font-size:clamp(28px,3.4vw,42px)}
+.banner .art{position:relative;min-height:200px;background:#0d0d0d}
+.banner .art svg{position:absolute;inset:0;width:100%;height:100%}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line)}
+.card{background:var(--panel);padding:16px;display:flex;flex-direction:column;gap:10px}
+.card .fig{background:linear-gradient(180deg,#1b1b1b,#141414);aspect-ratio:5/5.2;display:grid;place-items:center;position:relative}
+.card .fig svg{width:62%;height:auto}
+.card .tag{position:absolute;top:10px;left:10px;font-size:12px;color:var(--mute)}
+.row{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.price{white-space:nowrap;font-variant-numeric:tabular-nums}
+.sizes{display:flex;gap:4px;flex-wrap:wrap}
+.sz{min-width:40px;min-height:36px;border:1px solid var(--line);background:transparent;color:var(--mute);font:500 13px Manrope,sans-serif;cursor:pointer}
+.sz[aria-pressed=true]{border-color:var(--ink);color:var(--ink)}
+.add{min-height:44px;border:1px solid var(--ink);background:transparent;color:var(--ink);font:600 13px Manrope,sans-serif;cursor:pointer}
+.add:hover,.add:focus-visible{background:var(--ink);color:var(--bg)}
+.drawer{position:absolute;top:0;right:0;bottom:0;width:min(360px,100%);background:#0f0f0f;border-left:1px solid #333;transform:translateX(102%);transition:transform .35s ease;display:flex;flex-direction:column;z-index:5}
+.drawer.open{transform:none}
+.drawer header{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line)}
+.drawer ul{list-style:none;margin:0;padding:0 18px;flex:1;overflow:auto}
+.drawer li{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.drawer li .th{background:#1a1a1a;aspect-ratio:1;display:grid;place-items:center}
+.drawer li .th svg{width:70%}
+.qty{display:flex;align-items:center;gap:6px;margin-top:4px}
+.qty button,.x{width:32px;height:32px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;font:15px Manrope,sans-serif}
+.drawer footer{padding:16px 18px;border-top:1px solid var(--line);display:grid;gap:12px}
+.empty{padding:40px 0;color:var(--mute);text-align:center}
+.note{margin-top:12px;font-size:13px;color:var(--mute)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(24px,5vw,72px)}
+.rule{border-top:1px solid var(--line)}
+.bring{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.bring div{background:var(--bg);padding:24px}
+.bring h3{font-size:22px;margin-bottom:8px}
+.bring p{color:#c9c5bd;font-size:15px}
+.work{display:grid;gap:0}
+.item{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;padding:28px 0;border-top:1px solid var(--line)}
+.item:last-child{border-bottom:1px solid var(--line)}
+.item .meta{color:var(--mute);font-size:14px}
+.item h3{margin-bottom:10px}
+.item p{color:#c9c5bd;max-width:68ch}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.stack span{font-size:13px;border:1px solid var(--line);padding:4px 10px;color:var(--mute)}
+.xp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.xp ul{margin:14px 0 0;padding-left:18px;color:#c9c5bd}
+.xp li{margin-bottom:8px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(14em,1fr));gap:24px}
+.skills h3{font-size:20px;margin-bottom:8px}
+.skills p{color:#c9c5bd;font-size:15px}
+.contact{text-align:left}
+.contact .big{font-size:clamp(36px,6vw,72px)}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(15em,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:32px}
+.links a,.links div{background:var(--bg);padding:20px;text-decoration:none;display:block}
+.links .k{font-size:13px;color:var(--mute);display:block}
+.links .v{font-size:16px;overflow-wrap:anywhere}
+.links a:hover .v{text-decoration:underline}
+footer.site{border-top:1px solid var(--line);padding:24px max(5vw,16px);color:var(--mute);font-size:13px}
+footer.site .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;background:var(--ink);color:var(--bg);padding:10px 18px;font-size:14px;font-weight:600;transition:.25s;z-index:50;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.intro{grid-template-columns:minmax(0,1fr)}.split{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.banner{grid-template-columns:minmax(0,1fr)}.banner .art{min-height:150px}.grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.card{padding:10px}.sz{min-width:34px}.bring,.xp{grid-template-columns:minmax(0,1fr)}.item{grid-template-columns:minmax(0,1fr);gap:8px}.url{display:none}nav.top .wrap{flex-wrap:nowrap;padding-block:10px}nav.top ul{gap:14px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}nav.top ul a{white-space:nowrap}.mono{font-size:18px;white-space:nowrap}nav.top li:nth-child(n+3):not(:last-child){display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="shade" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient>
+    <symbol id="g-tee" viewBox="0 0 200 230"><path d="M62 36 L86 26 Q100 40 114 26 L138 36 L172 72 L150 94 L138 82 L138 206 L62 206 L62 82 L50 94 L28 72 Z"/><path d="M62 36 L86 26 Q100 40 114 26 L138 36 L172 72 L150 94 L138 82 L138 206 L62 206 L62 82 L50 94 L28 72 Z" fill="url(#shade)"/><path d="M86 26 Q100 44 114 26" fill="none" stroke="#000" stroke-opacity=".3" stroke-width="2"/></symbol>
+    <symbol id="g-shirt" viewBox="0 0 200 230"><path d="M64 34 L88 26 L100 40 L112 26 L136 34 L164 58 L178 190 L156 193 L142 98 L142 214 L58 214 L58 98 L44 193 L22 190 L36 58 Z"/><path d="M64 34 L88 26 L100 40 L112 26 L136 34 L164 58 L178 190 L156 193 L142 98 L142 214 L58 214 L58 98 L44 193 L22 190 L36 58 Z" fill="url(#shade)"/><path d="M100 40 L100 214 M88 26 L96 52 L100 40 L104 52 L112 26" fill="none" stroke="#000" stroke-opacity=".35" stroke-width="2"/><g fill="#000" fill-opacity=".35"><circle cx="104" cy="70" r="2.4"/><circle cx="104" cy="104" r="2.4"/><circle cx="104" cy="138" r="2.4"/><circle cx="104" cy="172" r="2.4"/></g><rect x="68" y="72" width="24" height="26" fill="#000" fill-opacity=".14"/></symbol>
+    <symbol id="g-hood" viewBox="0 0 200 230"><path d="M70 44 Q72 8 100 8 Q128 8 130 44 L162 60 L178 190 L156 193 L142 100 L142 212 L58 212 L58 100 L44 193 L22 190 L38 60 Z"/><path d="M70 44 Q72 8 100 8 Q128 8 130 44 L162 60 L178 190 L156 193 L142 100 L142 212 L58 212 L58 100 L44 193 L22 190 L38 60 Z" fill="url(#shade)"/><path d="M80 46 Q100 64 120 46 Q118 22 100 22 Q82 22 80 46 Z" fill="#000" fill-opacity=".38"/><path d="M74 150 L126 150 L132 186 L68 186 Z" fill="#000" fill-opacity=".16"/><path d="M94 60 L92 92 M106 60 L108 92" stroke="#000" stroke-opacity=".35" stroke-width="2"/></symbol>
+    <symbol id="g-trouser" viewBox="0 0 200 230"><path d="M62 18 L138 18 L152 220 L112 220 L100 74 L88 220 L48 220 Z"/><path d="M62 18 L138 18 L152 220 L112 220 L100 74 L88 220 L48 220 Z" fill="url(#shade)"/><path d="M62 30 L138 30 M80 30 L72 210 M120 30 L128 210" fill="none" stroke="#000" stroke-opacity=".3" stroke-width="2"/></symbol>
+  </defs>
+</svg>
+
+<nav class="top" aria-label="Main">
+  <div class="wrap">
+    <a class="mono" href="#top">Sailesh Kathir</a>
+    <ul>
+      <li><a href="#store">Concept store</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero band" id="top">
+  <svg class="silk" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs><linearGradient id="sk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#cfcfcf" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+    <path d="M-50 520 C 300 380, 520 620, 820 420 S 1180 220, 1300 300 L1300 600 L-50 600 Z" fill="url(#sk)"/>
+    <path d="M700 -20 C 820 120, 980 60, 1260 180" fill="none" stroke="url(#sk)" stroke-width="60"/>
+  </svg>
+  <div class="wrap">
+    <div class="intro">
+      <div>
+        <p class="role">Senior Software Engineer · Bengaluru · open to remote</p>
+        <h1>Premium storefronts, built to hold up under real traffic.</h1>
+      </div>
+      <div>
+        <p class="lede">I'm Sailesh. I spend my days building backend services, APIs and cloud pipelines that run high-volume business operations. I bring that same rigour to the front: minimal, fast, and quietly precise.</p>
+        <div class="cta">
+          <a class="btn solid" href="#store">Try the concept store</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="browser" id="store" aria-label="Concept storefront demo">
+      <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="url">noirhouse.store/collection/aw26</div></div>
+      <div class="store-nav">
+        <span class="brand">NOIR</span>
+        <div class="chips" role="group" aria-label="Filter by category" id="chips"></div>
+        <button class="bagbtn" id="bagBtn" aria-controls="drawer" aria-expanded="false">Bag <b id="bagCount">0</b></button>
+      </div>
+      <div class="banner">
+        <div class="copy">
+          <span class="mute small">Autumn / Winter 26</span>
+          <h3>Quiet layers, cut close.</h3>
+          <p class="mute">Heavyweight cottons and brushed wool in onyx, bone and earth.</p>
+        </div>
+        <div class="art">
+          <svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="bn" x1="0" x2="1"><stop offset="0" stop-color="#1c1c1c"/><stop offset="1" stop-color="#0c0c0c"/></linearGradient></defs>
+            <rect width="400" height="220" fill="url(#bn)"/>
+            <path d="M0 170 C 120 120, 220 220, 400 130 L400 220 L0 220 Z" fill="#fff" fill-opacity=".05"/>
+            <use href="#g-shirt" x="40" y="22" width="150" height="180" fill="#8b7d6b"/>
+            <use href="#g-tee" x="170" y="40" width="130" height="160" fill="#ddd6ca"/>
+            <use href="#g-trouser" x="275" y="18" width="120" height="190" fill="#2b2b2b"/>
+          </svg>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+      <aside class="drawer" id="drawer" aria-label="Shopping bag">
+        <header><h3>Your bag</h3><button class="x" id="closeBag" aria-label="Close bag">✕</button></header>
+        <ul id="bagList"></ul>
+        <footer>
+          <div class="row"><span>Subtotal</span><strong class="price" id="subtotal">₹0</strong></div>
+          <p class="small mute">Free shipping over ₹4,999. Taxes calculated at checkout.</p>
+          <button class="btn solid" id="checkout">Checkout</button>
+        </footer>
+      </aside>
+    </div>
+    <p class="note">A concept storefront I designed and coded for this portfolio. Brand, products and prices are samples. Filter, choose a size and add to bag; your bag is remembered on this device.</p>
+  </div>
+</header>
+
+<section class="band rule" id="approach">
+  <div class="wrap split">
+    <div>
+      <h2>What I'd bring to your launch</h2>
+      <p class="mute" style="margin-top:14px">A clothing brand's site has to feel effortless while doing a lot underneath. That's the part I know best.</p>
+    </div>
+    <div class="bring">
+      <div><h3>Minimal, premium front end</h3><p>Responsive layouts in React or plain HTML/CSS, restrained type and motion, product pages that load fast on a phone over 4G.</p></div>
+      <div><h3>Commerce that works</h3><p>Catalogue, sizes, inventory, cart and checkout flows, payment and shipping integrations through clean REST APIs.</p></div>
+      <div><h3>Reliable operations</h3><p>CI/CD on Azure DevOps, Docker, AWS and Azure hosting, monitoring with Datadog, and calm handling of launch-day issues.</p></div>
+      <div><h3>Smarter discovery</h3><p>Hands-on with LLMs, embeddings and vector search, the same tools behind "similar styles" and natural-language product search.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band rule" id="work">
+  <div class="wrap">
+    <h2>Selected work</h2>
+    <div class="work" style="margin-top:28px">
+      <article class="item">
+        <div class="meta">Odessa · independent build</div>
+        <div>
+          <h3>AI-powered Jira auto-triage</h3>
+          <p>Designed and built end to end. Jira Rovo Automation calls a custom Go API, which hands issue context to Claude for root-cause analysis and suggested code or data fixes, posted back as internal Jira comments.</p>
+          <div class="stack"><span>Go</span><span>Claude</span><span>Rovo Automation</span><span>REST APIs</span><span>Prompt engineering</span></div>
+        </div>
+      </article>
+      <article class="item">
+        <div class="meta">Odessa · RAG pipeline</div>
+        <div>
+          <h3>Engineering knowledge retrieval</h3>
+          <p>A scheduled pipeline that processes closed Jira issues and stores root cause, solution, module and project metadata in PostgreSQL vector storage, so new defects are triaged against similar past evidence.</p>
+          <div class="stack"><span>PostgreSQL vector search</span><span>BGE embeddings</span><span>Qwen8B</span><span>Sentence Transformers</span></div>
+        </div>
+      </article>
+      <article class="item">
+        <div class="meta">Odessa · platform</div>
+        <div>
+          <h3>Auto Action framework</h3>
+          <p>Dynamic SQL execution, scheduled asynchronous processing, parallel record handling, external REST integrations, invoice generation, email workflows and secure SFTP/PGP transfers.</p>
+          <div class="stack"><span>C#</span><span>.NET</span><span>SQL Server</span><span>Microservices</span></div>
+        </div>
+      </article>
+      <article class="item">
+        <div class="meta">Odessa · Fixathon</div>
+        <div>
+          <h3>1st place, three-week Fixathon</h3>
+          <p>Fixed and tested 30 Jira defects and triaged 28 more in an internal engineering competition.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band rule" id="experience">
+  <div class="wrap xp">
+    <div>
+      <h2>Experience</h2>
+      <p class="mute" style="margin-top:10px">Odessa Technologies · May 2023 – present</p>
+      <h3 style="margin-top:18px">Senior Software Engineer</h3>
+      <p class="mute small">Promoted from Software Engineer</p>
+      <ul>
+        <li>Scalable backend services in C#, .NET, Go and Java supporting high-volume operations.</li>
+        <li>Owned Azure DevOps CI/CD, Git branching, production deployments, Key Vault and App Configuration.</li>
+        <li>Query tuning and stored-procedure work for performance; failover, disaster recovery and Datadog troubleshooting.</li>
+        <li>Production investigations, customer escalations and root-cause analysis with Product and CloudOps.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Toolkit</h2>
+      <div class="skills" style="margin-top:22px">
+        <div><h3>Front end</h3><p>React.js, Angular.js, JavaScript, HTML, CSS</p></div>
+        <div><h3>Back end</h3><p>Go, Java, C#, Python, Spring Boot, .NET Core, ASP.NET Web API, microservices</p></div>
+        <div><h3>Data</h3><p>PostgreSQL, SQL Server, MySQL, query optimisation</p></div>
+        <div><h3>Cloud</h3><p>AWS EC2 and S3, Azure, Docker, Kubernetes, CI/CD</p></div>
+        <div><h3>AI</h3><p>Claude, LLMs, RAG, BGE embeddings, vector search</p></div>
+      </div>
+      <p class="mute" style="margin-top:28px">B.Tech, Information Technology · Dr NGP Institute of Technology, Coimbatore · 2019–2023 · CGPA 8.83</p>
+    </div>
+  </div>
+</section>
+
+<section class="band rule contact" id="contact">
+  <div class="wrap">
+    <h2 class="big">Let's build something different.</h2>
+    <p class="mute" style="margin-top:14px;max-width:56ch">Available for your clothing brand's website, from first layout to launch and beyond.</p>
+    <div class="links">
+      <div><span class="k">Email</span><span class="v">saileshayyappan001@gmail.com</span><button class="btn" id="copyMail" style="margin-top:12px">Copy email</button></div>
+      <a href="tel:+919364153816"><span class="k">Phone</span><span class="v">+91 93641 53816</span></a>
+      <a href="https://linkedin.com/in/saileshkathira"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/saileshkathira</span></a>
+      <a href="https://github.com/SaileshKathir"><span class="k">GitHub</span><span class="v">github.com/SaileshKathir</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="wrap"><span>© 2026 Sailesh Kathir A</span><span>Designed and coded by hand</span></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+{
+const products=[
+  {id:"tee-bone",name:"Heavyweight Tee",tone:"Bone",cat:"Tops",price:1890,g:"g-tee",fill:"#ddd6ca",tag:"New"},
+  {id:"tee-onyx",name:"Boxy Tee",tone:"Onyx",cat:"Tops",price:1890,g:"g-tee",fill:"#2c2c2c",tag:""},
+  {id:"over-earth",name:"Wool Overshirt",tone:"Earth",cat:"Outerwear",price:5490,g:"g-shirt",fill:"#8b7d6b",tag:"Limited"},
+  {id:"hood-ash",name:"Loopback Hoodie",tone:"Ash",cat:"Tops",price:3990,g:"g-hood",fill:"#6f6f6b",tag:""},
+  {id:"pleat-onyx",name:"Pleated Trouser",tone:"Onyx",cat:"Bottoms",price:4290,g:"g-trouser",fill:"#2c2c2c",tag:""},
+  {id:"wide-bone",name:"Wide Trouser",tone:"Bone",cat:"Bottoms",price:4290,g:"g-trouser",fill:"#ddd6ca",tag:"New"}
+];
+const cats=["All","Tops","Outerwear","Bottoms"],sizes=["S","M","L","XL"];
+const inr=n=>"₹"+n.toLocaleString("en-IN");
+const $=id=>document.getElementById(id);
+const pick={};let cat="All",bag=[];
+try{bag=JSON.parse(localStorage.getItem("noir-bag")||"[]")}catch(e){bag=[]}
+const save=()=>{try{localStorage.setItem("noir-bag",JSON.stringify(bag))}catch(e){}};
+const svg=(p)=>`<svg viewBox="0 0 200 230" aria-hidden="true"><use href="#${p.g}" fill="${p.fill}"/></svg>`;
+const toast=(t)=>{const el=$("toast");el.textContent=t;el.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove("on"),1600)};
+
+function renderChips(){
+  $("chips").innerHTML=cats.map(c=>`<button class="chip" data-c="${c}" aria-pressed="${c===cat}">${c}</button>`).join("");
+}
+function renderGrid(){
+  const list=products.filter(p=>cat==="All"||p.cat===cat);
+  $("grid").innerHTML=list.map(p=>{const s=pick[p.id]||"M";return `<article class="card">
+    <div class="fig">${p.tag?`<span class="tag">${p.tag}</span>`:""}${svg(p)}</div>
+    <div class="row"><strong>${p.name}</strong><span class="price">${inr(p.price)}</span></div>
+    <span class="mute small">${p.tone} · ${p.cat}</span>
+    <div class="sizes" role="group" aria-label="Size for ${p.name}">${sizes.map(z=>`<button class="sz" data-p="${p.id}" data-s="${z}" aria-pressed="${z===s}">${z}</button>`).join("")}</div>
+    <button class="add" data-add="${p.id}">Add to bag</button></article>`}).join("");
+}
+function renderBag(){
+  const n=bag.reduce((a,b)=>a+b.q,0);
+  $("bagCount").textContent=n;
+  $("subtotal").textContent=inr(bag.reduce((a,b)=>a+b.q*products.find(p=>p.id===b.id).price,0));
+  $("bagList").innerHTML=bag.length?bag.map((b,i)=>{const p=products.find(x=>x.id===b.id);return `<li>
+    <div class="th">${svg(p)}</div>
+    <div><strong>${p.name}</strong><div class="mute small">${p.tone} · Size ${b.s}</div>
+    <div class="qty"><button data-dec="${i}" aria-label="Decrease">−</button><span>${b.q}</span><button data-inc="${i}" aria-label="Increase">+</button></div></div>
+    <span class="price">${inr(p.price*b.q)}</span></li>`}).join(""):`<li class="empty" style="display:block">Your bag is empty.</li>`;
+  $("checkout").disabled=!bag.length;
+  save();
+}
+function openBag(o){$("drawer").classList.toggle("open",o);$("bagBtn").setAttribute("aria-expanded",o)}
+
+$("chips").addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(!b)return;cat=b.dataset.c;renderChips();renderGrid()});
+$("grid").addEventListener("click",e=>{
+  const s=e.target.closest("[data-s]");
+  if(s){pick[s.dataset.p]=s.dataset.s;renderGrid();return}
+  const a=e.target.closest("[data-add]");
+  if(a){const id=a.dataset.add,sz=pick[id]||"M";const hit=bag.find(b=>b.id===id&&b.s===sz);hit?hit.q++:bag.push({id,s:sz,q:1});renderBag();
+    const bb=$("bagBtn");bb.classList.remove("bump");void bb.offsetWidth;bb.classList.add("bump");toast(products.find(p=>p.id===id).name+" · "+sz+" added")}
+});
+$("bagList").addEventListener("click",e=>{
+  const i=e.target.closest("[data-inc]"),d=e.target.closest("[data-dec]");
+  if(i)bag[+i.dataset.inc].q++;
+  if(d){const k=+d.dataset.dec;bag[k].q--;if(bag[k].q<1)bag.splice(k,1)}
+  if(i||d)renderBag();
+});
+$("bagBtn").addEventListener("click",()=>openBag(!$("drawer").classList.contains("open")));
+$("closeBag").addEventListener("click",()=>openBag(false));
+document.addEventListener("keydown",e=>{if(e.key==="Escape")openBag(false)});
+$("checkout").addEventListener("click",()=>toast("Demo checkout: this is where payments would connect"));
+$("copyMail").addEventListener("click",()=>{try{navigator.clipboard.writeText("saileshayyappan001@gmail.com").then(()=>toast("Email copied"),()=>toast("saileshayyappan001@gmail.com"))}catch(e){toast("saileshayyappan001@gmail.com")}});
+
+renderChips();renderGrid();renderBag();
+}
+</script>
+</body>
+</html>
